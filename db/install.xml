@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/community/db" VERSION="20121130" COMMENT="XMLDB file for Moodle blocks/community"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_badger_badges" COMMENT="block_badger_badges" NEXT="block_badger_badges_issued">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="50" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="alias"/>
+        <FIELD NAME="nickname" TYPE="char" LENGTH="50" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="deleted"/>
+        <FIELD NAME="deleted" DEFAULT="0" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="collection"/>
+        <FIELD NAME="collection" TYPE="char" LENGTH="25" NOTNULL="false" SEQUENCE="false" PREVIOUS="deleted" NEXT="level"/>
+        <FIELD NAME="level" TYPE="int" LENGTH="2" NOTNULL="false" SEQUENCE="false" PREVIOUS="collection" NEXT="description"/>
+        <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="level" NEXT="criteria"/>
+        <FIELD NAME="criteria" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="description" NEXT="image"/>
+        <FIELD NAME="image" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="criteria" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="image" NEXT="courserestrictions" />
+        <FIELD NAME="courserestrictions" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="courseid"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_badger_badges_issued" COMMENT="block_badger_badges_issued table retrofitted from MySQL" PREVIOUS="block_badger_badges">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="19" NOTNULL="true" SEQUENCE="true" NEXT="userid"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="19" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="badgeid"/>
+        <FIELD NAME="badgeid" TYPE="int" LENGTH="19" NOTNULL="false" SEQUENCE="false" PREVIOUS="userid" NEXT="claimed"/>
+        <FIELD NAME="claimed" TYPE="int" LENGTH="8" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="badgeid" NEXT="verified"/>
+        <FIELD NAME="verified" TYPE="int" LENGTH="8" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="claimed" NEXT="issued"/>
+        <FIELD NAME="issued" TYPE="int" LENGTH="8" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="verified" NEXT="justify"/>
+        <FIELD NAME="justify" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="issued" NEXT="salt" />
+        <FIELD NAME="salt" TYPE="char" LENGTH="32" NOTNULL="false" SEQUENCE="false" PREVIOUS="justify"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
