@@ -14,7 +14,7 @@
         $field = new xmldb_field('courserestrictions', XMLDB_TYPE_TEXT, null, null, null, null, null, 'courseid');
         if (!$dbman->field_exists($table, $field)) {
             $dbman->add_field($table, $field);
-            $DB->execute("update {block_badger_badges} set coursestrictions=courseid where coursestrictions is null");
+            $DB->execute("update {block_badger_badges} set courserestrictions=courseid where courserestrictions is null");
         }
         upgrade_plugin_savepoint(true, 2013012803, 'block','badger');
 
