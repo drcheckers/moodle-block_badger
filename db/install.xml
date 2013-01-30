@@ -7,9 +7,9 @@
     <TABLE NAME="block_badger_badges" COMMENT="block_badger_badges" NEXT="block_badger_badges_issued">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="name"/>
-        <FIELD NAME="name" TYPE="char" LENGTH="50" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="alias"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="50" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="nickname"/>
         <FIELD NAME="nickname" TYPE="char" LENGTH="50" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="deleted"/>
-        <FIELD NAME="deleted" DEFAULT="0" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="collection"/>
+        <FIELD NAME="deleted" DEFAULT="0" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" PREVIOUS="nickname" NEXT="collection"/>
         <FIELD NAME="collection" TYPE="char" LENGTH="25" NOTNULL="false" SEQUENCE="false" PREVIOUS="deleted" NEXT="level"/>
         <FIELD NAME="level" TYPE="int" LENGTH="2" NOTNULL="false" SEQUENCE="false" PREVIOUS="collection" NEXT="description"/>
         <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="level" NEXT="criteria"/>
