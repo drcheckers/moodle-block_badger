@@ -34,7 +34,7 @@ class block_badger extends block_base {
     }
 
     function applicable_formats() {
-        return array('course' => true);
+        return array('site-index'=>true, 'course' => true);
     }
 
     function specialization() {

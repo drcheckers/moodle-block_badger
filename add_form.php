@@ -72,7 +72,7 @@ class badge_upload_form extends moodleform {
         $mform->setDefault('level', isset($data->level)?$data->level:0);
         $mform->addHelpButton('level', 'level', 'block_badger');
         
-        $mform->addElement('text', 'nickname', get_string('nickname','block_badger'), array('size'=>12));
+        $mform->addElement('text', 'nickname', get_string('nickname','block_badger'), array('size'=>30));
         $mform->setDefault('nickname', '');
         $mform->addHelpButton('nickname', 'nickname', 'block_badger');
         

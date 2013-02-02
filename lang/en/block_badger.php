@@ -32,7 +32,7 @@ $string['congratulations'] = 'Congratulations';
 
 $string['newbadgerblock'] = '(new badger block)';
 $string['justify']='Justify your claim to this badge:';
-$string['spec']='Uploaded badges must by <b>square png files</b>';
+$string['spec']='Uploaded badges must be <b>square png files</b>';
 $string['criteria']='Award Criteria';
 $string['criteria_help']='Detailed explaination of the criteria for awarding the badge ';
 $string['description']='Description of badge';
